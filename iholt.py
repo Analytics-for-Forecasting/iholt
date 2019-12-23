@@ -69,3 +69,6 @@ class Holt_model(object):
                 Lt_1 = Lt
                 Tt_1 = Tt
         return list_It, list_Lt, list_Tt
+    def train(self, x0, bnds, mtd='L-BFGS-B'):
+        result = minimize(self.fun, x0, method=mtd, bounds=bnds)
+        return result
